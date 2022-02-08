@@ -2,11 +2,11 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__navigation">
-        <a href="/login" class="footer__logo-link">
+        <router-link :to="{ name: 'Login' }" class="footer__logo-link">
           <img src="@/assets/img/logo.svg" alt="logo" class="img-logo">
-        </a>
+        </router-link>
         <nav class="footer__nav-list">
-          <a href="#" class="footer__item-link" v-for="(item, index) in link" :key="index">
+          <a v-for="(item, index) in link" :key="index" href="#" class="footer__item-link">
             {{ item.nameLink }}
           </a>
         </nav>

@@ -4,9 +4,9 @@
     <div class="header_blue">
       <div class="container">
         <div class="header__wrap-logo">
-          <a href="/login" class="header__logo-link">
+          <router-link :to="{ name: 'Login' }" class="header__logo-link">
             <img src="@/assets/img/logo.svg" alt="logo" class="img-logo">
-          </a>
+          </router-link>
         </div>
       </div>
     </div>

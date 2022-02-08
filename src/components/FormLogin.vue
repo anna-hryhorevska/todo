@@ -49,12 +49,14 @@ export default {
   methods: {
     submit() {
       this.validate();
-      if (!this.errors.name && !this.errors.password && login(this.name, this.password)) {
-        localStorage.setItem('isAuthorized', true);
-        this.$router.push({ name: 'Todo' });
-      } else {
-        this.userNotFoundError = true;
-        localStorage.setItem('isAuthorized', false);
+      if (!this.errors.name && !this.errors.password) {
+        if (login(this.name, this.password)) {
+          localStorage.setItem('isAuthorized', true);
+          this.$router.push({ name: 'Todo' });
+        } else {
+          this.userNotFoundError = true;
+          localStorage.setItem('isAuthorized', false);
+        }
       }
     },
     validate() {

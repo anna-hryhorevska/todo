@@ -2,15 +2,15 @@
   <div class="page-todo">
     <div class="page-todo__content">
       <div class="page-todo__background_blue"></div>
-      <a href="/login" class="page-todo__logo-link">
+      <router-link :to="{ name: 'Login' }" class="page-todo__logo-link">
         <img src="@/assets/img/logo.svg" alt="logo" class="img-logo">
-      </a>
+      </router-link>
       <div class="page-todo__block-task">
         <h1 class="block-task__title">
           Thank you {{ name }}!
         </h1>
         <form class="block-task__form-adding" @submit.prevent="addNewTask">
-          <Input placeholder="Add Todo"  v-model="newTask" class="block-task__input"/>
+          <Input placeholder="Add Todo" v-model="newTask" class="block-task__input"/>
           <Button msg="Add" class="block-task__btn_blue"/>
         </form>
         <ul class="block-task__list">
